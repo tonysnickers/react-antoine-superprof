@@ -4,6 +4,7 @@ import {routes} from "./routes";
 
 const Home = lazy(()=> import("../pages/home"))
 const Review = lazy(()=> import("../pages/review"))
+
 export default function Router() {
   return (
     <BrowserRouter>
