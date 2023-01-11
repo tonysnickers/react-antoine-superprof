@@ -10,7 +10,7 @@ const sendReview = async (post: string) => {
     //@ts-ignore
     throw new Error(err?.response?.data?.message || "An error occured.");
   }
-};
+}; 
 
 export const router = {
   sendReview,

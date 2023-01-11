@@ -26,7 +26,7 @@ export default function HomeHeader({
   return (
     <Header>
       <Title title="Movie app"/>
-      <p>{user.isLogged ? "you are loggued" : "you are not loggued"}</p>
+      <p>{user.isLogged ? "you are loggued !" : "you are not loggued!"}</p>
       <Input
         onChange={onChangeQuery}
         value={query}
