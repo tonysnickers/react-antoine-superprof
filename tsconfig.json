@@ -6,6 +6,10 @@
       "assets/*": ["src/assets/*"],
       "components/*": ["src/components/*"],
       "pages/*": ["src/pages/*"],
+      "api/*": ["src/api/*"],
+      "router/*": ["src/router/*"],
+      "containers/*": ["src/containers/*"],
+      "models/*": ["src/models/*"],
       "src/*": ["src/*"]
     },
     "skipLibCheck": true,

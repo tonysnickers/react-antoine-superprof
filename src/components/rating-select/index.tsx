@@ -21,8 +21,8 @@ const InputSelect = styled.select`
   }
 `;
 
-const Option = styled.option<{ isSelected: boolean }>`
-  color: ${(props) => (props.isSelected ? "red" : "black")};
+const Option = styled.option<{ isSelected?: boolean }>`
+  color: ${({ isSelected }) => (isSelected ? "red" : "black")};
 `;
 
 export default function RatingSelect({ onChange, value }: IProps) {
@@ -39,3 +39,4 @@ export default function RatingSelect({ onChange, value }: IProps) {
     </InputSelect>
   );
 }
+

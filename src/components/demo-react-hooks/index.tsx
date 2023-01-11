@@ -45,10 +45,17 @@ export default function Parent() {
 
   // si fetchData n'était pas une fonction memoisée grâce à useCallback,
   // la fonction se redeclarerait à chaque rendu, même non lié (ex: label=> averell, la relancerait)
+  // du coup, comme useEffect possède fetchData() en dépendence, useEffect se relancerait alors qu'il n'est pas sensé le faire!
+  // ex: si useCallback, on lance setLabel(), useFx n'est pas redeclenché, mais si pas de useCallback, useEffect EST redeclenché"
   const fetchData = useCallback(() => {
     console.log("fetchdata!!!");
     return { hits: total };
   }, [total]);
+
+  // const fetchData = () => {
+  //   console.log("fetchdata!!!");
+  //   return { hits: total };
+  // };
 
   //useEffect,se lance à chaque fois que le ou les elements dans son array de dépendance change(n)t.#FFC633
   // si son array de dépenance est vide, alors, il ne selance qu'une seule fois, au moment ou le composant est rendu.#FFC633
@@ -62,6 +69,7 @@ export default function Parent() {
       alert(ref.current.clientWidth);
     }
   };
+
   return (
     <div>
       <p>{total}</p>
