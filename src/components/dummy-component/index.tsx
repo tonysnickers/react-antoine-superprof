@@ -66,6 +66,7 @@ const isItalian = (props: Omit<IProps, "fruits" | "user">): boolean => {
 
 // REQUIRED => make all properties compulsory
 // Required<T>
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const isSpanish = (props: Required<IProps>): boolean => {
   return props.type === "spanish";
 };
