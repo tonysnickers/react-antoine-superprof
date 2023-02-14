@@ -7,6 +7,7 @@ import { useUser } from "./stores/user/context";
 
 export default function App() {
   const { user, login, logout } = useUser();
+  
   return (
     <ErrorBoundary fallback={<ErrorLayout />}>
       <nav>

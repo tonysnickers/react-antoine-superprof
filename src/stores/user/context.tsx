@@ -13,12 +13,7 @@ type IUserContext = {
   logout: () => void;
 };
 
-export const UserContext = createContext<IUserContext>({
-  user: defaultUser,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  login: (_: User) => null,
-  logout: () => null,
-});
+export const UserContext = createContext<IUserContext>(null);
 
 interface IProps {
   children: React.ReactNode;
@@ -27,6 +22,7 @@ interface IProps {
 export default function UserStore({ children }: IProps) {
   const [user, setUser] = useState<User>(defaultUser);
   const logout = () => setUser(defaultUser);
+
   const login = (user: Partial<User>) => {
     setUser({
       membershipValidUntil: user.membershipValidUntil,
